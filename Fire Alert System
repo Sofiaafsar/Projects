@@ -1,0 +1,26 @@
+const int buzzer=8;
+const int ledred=13;
+const int sensor=11;
+void setup()
+ {
+  Serial.begin(9600);
+  pinMode(ledred,OUTPUT);
+  pinMode(sensor,INPUT);
+  pinMode(buzzer,OUTPUT);
+}
+
+void loop() {
+ if (digitalRead(sensor)==0)
+ {
+     digitalWrite(ledred,HIGH);
+     digitalWrite(buzzer,HIGH);
+     Serial.println("FIRE DETECTED");
+ }
+ else
+ {
+   digitalWrite(buzzer,LOW);
+   digitalWrite(ledred,LOW);
+
+ }
+
+}
